@@ -7,7 +7,7 @@ version: "1.0.0"
 
 # Vue Mastery
 
-> 基于 Vue 3.3+。始终使用 Composition API + `<script setup lang="ts">`。3.4+ 和 3.5+ 的新 API 在 references 中标注版本要求，使用前确认项目版本。
+> 基于 Vue 3.5+，向下兼容 3.3+/3.4+。始终使用 Composition API + `<script setup lang="ts">`。版本敏感的 API 在 references 中标注最低版本要求，使用前确认项目版本。
 
 ## 核心原则
 
@@ -102,7 +102,7 @@ version: "1.0.0"
 
 ### 版本检测
 
-编码前先检查项目的 Vue 版本（`package.json` 中的 `vue` 依赖），根据版本确定可用 API。本技能以 Vue 3.3+ 为基准，references 中标注了 3.4+ 和 3.5+ 新 API 的最低版本要求，使用前确认项目版本满足要求。
+编码前先检查项目的 Vue 版本（`package.json` 中的 `vue` 依赖），根据版本确定可用 API。本技能覆盖 Vue 3.3+ 到 3.5+，references 中标注了 3.4+ 和 3.5+ 新 API 的最低版本要求，使用前确认项目版本满足要求。
 
 ### 版本差异速查表
 
