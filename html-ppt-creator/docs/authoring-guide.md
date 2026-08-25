@@ -47,13 +47,11 @@ layout twice in a row.
 
 ## 4. Scaffold the deck
 
-```bash
-./scripts/new-deck.sh my-talk
-```
-
-This copies `deck-templates/starter.html` into `examples/my-talk/index.html` with
-paths rewritten. Add/remove `<section class="slide">` blocks to match your
-outline.
+Read `deck-templates/starter.html` and write it to
+`{workspace}/{deck-name}/index.html`. Rewrite the relative resource paths
+(`../design-system/...`) to absolute paths pointing at the skill directory
+(`{skillDir}/design-system/...`). Add/remove `<section class="slide">` blocks
+to match your outline.
 
 ## 5. Author each slide
 
@@ -80,7 +78,7 @@ Pick **one** accent animation per slide. Everything else should be calm.
 
 ## 7. Chinese + English decks
 
-- Fonts are already imported in `fonts.css` (Noto Sans SC + Noto Serif SC).
+- Fonts are already imported in `typography.css` (Noto Sans SC + Noto Serif SC).
 - Use `lang="zh-CN"` on `<html>`.
 - For bilingual titles, stack lines: `<h1 class="h1">主标题<br><span class="dim">English subtitle</span></h1>`.
 - Keep English subtitles in a lighter weight (300) and dim color to avoid
@@ -88,9 +86,7 @@ Pick **one** accent animation per slide. Everything else should be calm.
 
 ## 8. Review in-browser
 
-```bash
-open examples/my-talk/index.html
-```
+Open `{workspace}/{deck-name}/index.html` in the browser (use `open_target`).
 
 Walk through every slide with ← →. Press:
 
@@ -100,19 +96,19 @@ Walk through every slide with ← →. Press:
 
 ## 9. Export to PNG
 
+Use `scripts/render.js` to generate headless-browser screenshot commands:
+
 ```bash
 # single slide
-./scripts/render.sh examples/my-talk/index.html
+node scripts/render.js --html {workspace}/{deck-name}/index.html --mode png --slide-count 1 --out-dir {workspace}/{deck-name}/png
 
-# all slides (autodetect count by looking for .slide sections)
-./scripts/render.sh examples/my-talk/index.html all
-
-# explicit slide count + output dir
-./scripts/render.sh examples/my-talk/index.html 12 out/my-talk-png
+# all slides (explicit count)
+node scripts/render.js --html {workspace}/{deck-name}/index.html --mode png --slide-count 12 --out-dir {workspace}/{deck-name}/png
 ```
 
-Output is 1920×1080 by default. Change in `render.sh` if the user wants 3:4
-for 小红书图文 (1242×1660).
+`render.js` detects Chrome/Edge automatically and outputs the command(s) to
+stdout. Execute each command via `run_command`. Output is 1920×1080 by default.
+For 小红书图文 (3:4), adjust `--window-size` in the generated command.
 
 ## 10. What to NOT do
 
@@ -135,7 +131,7 @@ for 小红书图文 (1242×1660).
 - **Theme doesn't switch with T**: check `data-themes` on `<body>` and
   `data-theme-base` pointing to the themes directory relative to the HTML
   file.
-- **Fonts fall back**: make sure `fonts.css` is linked before the theme.
+- **Fonts fall back**: make sure `typography.css` is linked before the theme.
 - **Chart.js colors wrong**: charts read CSS vars in JS; make sure they run
   after the DOM is ready (`addEventListener('DOMContentLoaded', …)`).
-- **PNG too small**: bump `--window-size` in `scripts/render.sh`.
+- **PNG too small**: bump `--window-size` in the command output by `scripts/render.js`.
