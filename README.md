@@ -12,8 +12,8 @@
 | [debugger-pro](./debugger-pro) | 系统性调试：证据驱动的 6 阶段工作流，问题分级（P0-P3）、修复风险评估与门控、回归验证，输出完整调试报告 |
 | [html-ppt-creator](./html-ppt-creator) | HTML 幻灯片制作：36 套主题、15 套 deck 模板、47 种动效、演讲者模式，打包为单 HTML 文件交付 |
 | [prd-writer](./prd-writer) | 产品需求文档生成：结构化访谈 + 多模板选择，产出实施级 PRD，覆盖 B2B SaaS、数据平台、2C 移动端等场景及国内合规要求 |
-| [knowledge-extractor](./knowledge-extractor) | 知识提取元技能：从对话内容中提取有价值的知识条目，结构化保存到个人知识库 |
-| [skill-generator](./skill-generator) | 技能生成元技能：按标准化规范生成结构完整、逻辑闭环、脚本可执行的 SKILL.md，含能力边界约束与质量校验清单 |
+| [knowledge-extractor](./knowledge-extractor) | 内置元技能 · 知识提取：从对话内容中提取有价值的知识条目，结构化保存到个人知识库 |
+| [skill-generator](./skill-generator) | 内置元技能 · 技能生成：按标准化规范生成结构完整、逻辑闭环、脚本可执行的 SKILL.md，含能力边界约束与质量校验清单 |
 
 ## 技能结构
 
@@ -30,7 +30,9 @@
 
 ## 使用方式
 
-在 UseIO 中通过「技能管理」安装技能目录，或直接将技能文件夹放入应用数据目录的 `skills/` 下，重启后即可在对话中通过关键词触发或 `@技能` 引用。
+**内置元技能**（knowledge-extractor、skill-generator）随 UseIO 应用内置分发，无需安装与导入，随应用一起迭代升级，对话中直接触发即可。
+
+**其他技能**：将技能目录放入应用数据目录的 `skills/` 下（或通过「技能管理」导入），重启后在对话中通过关键词触发或 `@技能` 引用。
 
 ## 创建新技能
 
