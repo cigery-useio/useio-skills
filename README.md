@@ -11,6 +11,7 @@
 | [browser-automation](./browser-automation) | 浏览器自动化：控制 Chrome 执行多步骤网页操作——导航、点击输入、数据采集、表单填写、控制台与网络请求监控 |
 | [debugger-pro](./debugger-pro) | 系统性调试：证据驱动的 6 阶段工作流，问题分级（P0-P3）、修复风险评估与门控、回归验证，输出完整调试报告 |
 | [html-ppt-creator](./html-ppt-creator) | HTML 幻灯片制作：36 套主题、15 套 deck 模板、47 种动效、演讲者模式，打包为单 HTML 文件交付 |
+| [ppt-creator](./ppt-creator) | PPT 制作（.pptx）：内置嵌入式 Python，无需系统安装 Python 即可运行，支持企业内网零依赖环境；多种布局、模板创建、修改已有 PPT |
 | [prd-writer](./prd-writer) | 产品需求文档生成：结构化访谈 + 多模板选择，产出实施级 PRD，覆盖 B2B SaaS、数据平台、2C 移动端等场景及国内合规要求 |
 | [knowledge-extractor](./knowledge-extractor) | 内置元技能 · 知识提取：从对话内容中提取有价值的知识条目，结构化保存到个人知识库 |
 | [skill-generator](./skill-generator) | 内置元技能 · 技能生成：按标准化规范生成结构完整、逻辑闭环、脚本可执行的 SKILL.md，含能力边界约束与质量校验清单 |
